@@ -1,0 +1,34 @@
+{
+  "app": {
+    "entryPagePath": "pages/home/index",
+    "pages": [
+      "pages/home/index",
+      "pages/detail/index"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "微信接口功能演示",
+      "backgroundColor": "#eeeeee"
+    },
+    "tabBar": [],
+    "networkTimeout": {},
+    "debug": true
+  },
+  "modules": {
+    "pages/home/index": {
+      "navigationBarBackgroundColor": "#ffd200",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "美团",
+      "backgroundColor": "#fff",
+      "usingComponents": {}
+    },
+    "pages/detail/index": {
+      "navigationBarBackgroundColor": "#ffd200",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "店铺详情页",
+      "backgroundColor": "#fff",
+      "usingComponents": {}
+    }
+  }
+}

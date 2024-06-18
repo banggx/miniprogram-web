@@ -1,0 +1,80 @@
+@import '@native/less/variables.less';
+
+.weixin-app__mini-content {
+	padding-top: 176px * @proportion;
+	box-sizing: border-box;
+	height: 100%;
+	overflow-y: scroll;
+
+	.weixin-app__mini-search {
+		padding: 30px * @proportion 16px * @proportion;
+		background-color: #ededed;
+	}
+
+	.weixin-app__mini-search-input {
+		height: 72px * @proportion;
+		background-color: #ffffff;
+		border-radius: 10px * @proportion;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.weixin-app__mini-search-input-placeholder {
+		font-size: 33px * @proportion;
+		color: #b3b3b3;
+		font-weight: 300;
+		padding-left: 50px * @proportion;
+		background: url('@native/images/search.jpg') no-repeat left center;
+		background-size: 33px * @proportion 33px * @proportion;
+	}
+}
+
+.weixin-app__mini-used {
+	padding-left: 32px * @proportion;
+	background-color: #fff;
+	border-bottom: 1px solid #e6e6e6;
+	border-top: 1px solid #e6e6e6;
+
+	.weixin-app__mini-used-title {
+		padding: 30px * @proportion 0;
+		font-weight: normal;
+		font-size: 26px * @proportion;
+		color: #737373;
+	}
+
+	.weixin-app__mini-used-list-item {
+		padding-left: 158px * @proportion;
+		list-style: none;
+		cursor: pointer;
+		position: relative;
+
+		&:last-child .weixin-app__mini-used-name {
+			border: none;
+		}
+	}
+
+	.weixin-app__mini-used-logo {
+		width: 100px * @proportion;
+		height: 100px * @proportion;
+		overflow: hidden;
+		left: 18px * @proportion;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 50%;
+		position: absolute;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.weixin-app__mini-used-name {
+		padding-top: 66px * @proportion;
+		padding-bottom: 66px * @proportion;
+		color: #333;
+		font-size: 33px * @proportion;
+		border-bottom: 1px solid #e4e4e4;
+	}
+}

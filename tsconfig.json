@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "es5",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    "module": "ESNext",
+    "removeComments": false,
+    "sourceMap": false,
+    "lib": ["ESNext", "DOM"],
+    "paths": {
+      "@native/*": ["./src/*"]
+    },
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

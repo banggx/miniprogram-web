@@ -1,0 +1,33 @@
+{
+  "name": "mini-compile",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "mini-compile": "./bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.5",
+    "chai": "^4.3.7",
+    "jest": "^29.4.3",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/plugin-transform-arrow-functions": "^7.23.3",
+    "@babel/preset-env": "^7.23.9",
+    "@vue/component-compiler-utils": "^3.3.0",
+    "autoprefixer": "^10.4.16",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.31",
+    "shelljs": "^0.8.5",
+    "vue": "^2.7.16",
+    "vue-template-compiler": "^2.7.16"
+  }
+}

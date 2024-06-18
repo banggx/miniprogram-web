@@ -1,0 +1,45 @@
+<view class="user-profile">
+  <view class="user-profile__banner" wx:if="{{!!userData}}">
+    <view class="user-profile__user-bg">
+      <image class="user-profile__user-bg-photo" src="{{userData.bg}}"></image>
+    </view>
+    <view class="user-profile__mask"></view>
+    <view class="user-profile__info">
+      <view class="user-profile__photo">
+        <image class="user-profile__photo-img" src="{{userData.user_photo}}"></image>
+      </view>
+      <view class="user-profile__name-info">
+        <view>
+          <text class="user-profile__name">{{userData.user_name}}</text>
+        </view>
+        <view class="user-profile__number">
+          <text class="user-profile__number-text">抖音号: {{userData.dy_number}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="user-profile__return-btn" bindtap="goBack"></view>
+  </view>
+  <view class="user-profile__body" wx:if="{{!!userData}}">
+    <view class="user-profile__user-data">
+      <view class="user-profile__user-data-item">
+        <text class="user-profile__user-data-number">{{userData.like}}</text>
+        <text class="user-profile__user-data-type">获赞</text>
+      </view>
+      <view class="user-profile__user-data-item">
+        <text class="user-profile__user-data-number">{{userData.sub}}</text>
+        <text class="user-profile__user-data-type">关注</text>
+      </view>
+      <view class="user-profile__user-data-item">
+        <text class="user-profile__user-data-number">{{userData.fans}}</text>
+        <text class="user-profile__user-data-type">粉丝</text>
+      </view>
+    </view>
+    <view class="user-profile__video-list">
+      <view class="user-profile__video"></view>
+      <view class="user-profile__video"></view>
+      <view class="user-profile__video"></view>
+      <view class="user-profile__video"></view>
+      <view class="user-profile__video"></view>
+    </view>
+  </view>
+</view>

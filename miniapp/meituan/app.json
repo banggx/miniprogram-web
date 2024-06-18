@@ -1,0 +1,16 @@
+{
+  "entryPagePath": "pages/home/index",
+  "pages": [
+      "pages/home/index",
+      "pages/detail/index"
+  ],
+  "window": {
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "navigationBarTitleText": "微信接口功能演示",
+      "backgroundColor": "#eeeeee"
+  },
+  "tabBar": [],
+  "networkTimeout": {},
+  "debug": true
+}

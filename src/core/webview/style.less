@@ -1,0 +1,95 @@
+@import '@native/less/variables.less';
+
+.wx-native-webview {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.wx-native-webview.wx-native-webview--custom-nav .wx-native-webview__navigation {
+	display: none;
+}
+
+.wx-native-webview.wx-native-webview--custom-nav .wx-native-webview__body {
+	padding-top: 0;
+}
+
+.wx-native-webview__navigation {
+	padding-top: 88px * @proportion;
+	height: 88px * @proportion;
+	box-sizing: content-box;
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background-color: #f7f7f7;
+
+	.wx-native-webview__navigation-content {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		.wx-native-webview__navigation-left-btn {
+			width: 20px * @proportion;
+			height: 88px * @proportion;
+			position: absolute;
+			left: 34px * @proportion;
+			top: 0;
+			cursor: pointer;
+		}
+	}
+
+	.wx-native-webview__navigation-title {
+		text-align: center;
+		font-size: 34px * @proportion;
+	}
+
+	&.wx-native-webview__navigation--white {
+		.wx-native-webview__navigation-title {
+			color: #fff;
+		}
+
+		.wx-native-webview__navigation-left-btn {
+			background: url('@native/images/mini-arrow-left-white.png') no-repeat left center;
+			background-size: 20px * @proportion 35px * @proportion;
+		}
+	}
+
+	&.wx-native-webview__navigation--black {
+		.wx-native-webview__navigation-title {
+			color: #000;
+		}
+
+		.wx-native-webview__navigation-left-btn {
+			background: url('@native/images/mini-arrow-left.png') no-repeat left center;
+			background-size: 20px * @proportion 35px * @proportion;
+		}
+	}
+}
+
+.wx-native-webview__body {
+	flex: 1;
+	padding-top: 176px * @proportion;
+	display: flex;
+}
+
+.wx-native-webview__root {
+	flex: 1;
+	position: relative;
+	overflow: hidden;
+}
+
+.wx-native-webview__window {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}

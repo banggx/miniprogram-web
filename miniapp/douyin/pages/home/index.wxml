@@ -1,0 +1,93 @@
+<view class="home">
+  <view class="home-video-list">
+    <view class="home-video-list__body">
+      <swiper class="home-video-list__swiper" vertical="{{true}}" bindchange="switchVideo">
+        <swiper-item wx:for="{{videoList}}" wx:key="id">
+          <view class="home-video-list__video-box">
+            <view class="home-video-list__video-wraper" bindtap="tapVideo" data-id="{{item.id}}" data-status="{{item.status}}">
+              <video src="{{item.url}}" id="{{item.id}}" poster="{{item.poster}}" autoplay="{{false}}" controls="{{false}}" loop="{{true}}" class="home-video-list__video"></video>
+            </view>
+            <view class="home-video-list__pause-icon" wx:if="{{item.status === 'pause'}}"></view>
+            <view class="home-action">
+              <view class="home-action__user-photo" bindtap="openUserPage" data-user-id="{{item.detail.user_id}}">
+                <image class="home-action__user-photo-img" src="{{item.detail.user_photo}}"></image>
+                <view class="home-action__sub-tag"></view>
+              </view>
+              <view class="home-action__item">
+                <view class="home-action__item-icon home-action__icon-like" wx:if="{{!item.detail.liked}}" bindtap="tapLike" data-item="{{item}}"></view>
+                <view class="home-action__item-icon home-action__icon-like--checked" wx:if="{{item.detail.liked}}" bindtap="tapLike" data-item="{{item}}"></view>
+                <view class="home-action__item-text-wrap">
+                  <text class="home-action__item-text">{{item.detail.like_count}}</text>
+                </view>
+              </view>
+              <view class="home-action__item">
+                <view class="home-action__item-icon home-action__icon-comment"></view>
+                <view class="home-action__item-text-wrap">
+                  <text class="home-action__item-text">{{item.detail.comment_count}}</text>
+                </view>
+              </view>
+              <view class="home-action__item">
+                <view class="home-action__item-icon home-action__icon-mark" wx:if="{{!item.detail.marked}}" bindtap="tapMark" data-item="{{item}}"></view>
+                <view class="home-action__item-icon home-action__icon-mark--checked" wx:if="{{item.detail.marked}}" bindtap="tapMark" data-item="{{item}}"></view>
+                <view class="home-action__item-text-wrap">
+                  <text class="home-action__item-text">{{item.detail.mark_count}}</text>
+                </view>
+              </view>
+              <view class="home-action__item">
+                <view class="home-action__item-icon home-action__icon-relay"></view>
+                <view class="home-action__item-text-wrap">
+                  <text class="home-action__item-text">{{item.detail.relay}}</text>
+                </view>
+              </view>
+              <view class="home-action__music">
+                <image class="home-action__music-img" src="{{item.detail.music_photo}}"></image>
+              </view>
+            </view>
+            <view class="home-video-description">
+              <view class="home-video-description__subinfo" wx:if="{{!!item.detail.description.sub}}" bindtap="openApp" data-open-info="{{item.detail.description.sub}}">
+                <view class="home-video-description__subinfo--inner">
+                  <view class="home-video-description__subinfo-icon shoping" wx:if="{{item.detail.description.sub.type === 'shoping'}}"></view>
+                  <view class="home-video-description__subinfo-icon location" wx:if="{{item.detail.description.sub.type === 'location'}}"></view>
+                  <text class="home-video-description__subinfo-title">
+                    {{item.detail.description.sub.first_title}}
+                  </text>
+                  <view class="home-video-description__subinfo-line"></view>
+                  <text class="home-video-description__subinfo-txt">
+                    {{item.detail.description.sub.content}}
+                  </text>
+                </view>
+              </view>
+              <view class="home-video-description__user-name">
+                <text class="home-video-description__user-name-txt">
+                  @{{item.detail.user_name}}
+                </text>
+              </view>
+              <view class="home-video-description__content">
+                <text class="home-video-description__content-txt">
+                  {{item.detail.description.body}}
+                </text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class="home-footer">
+    <view class="home-footer__content">
+      <view class="home-footer__btn home-footer__btn--active">
+        <text class="home-footer__btn-text">首页</text>
+      </view>
+      <view class="home-footer__btn">
+        <text class="home-footer__btn-text">朋友</text>
+      </view>
+      <view class="home-footer__btn home-footer__add-video"></view>
+      <view class="home-footer__btn">
+        <text class="home-footer__btn-text">消息</text>
+      </view>
+      <view class="home-footer__btn">
+        <text class="home-footer__btn-text">我</text>
+      </view>
+    </view>
+  </view>
+</view>

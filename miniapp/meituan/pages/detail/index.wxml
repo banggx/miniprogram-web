@@ -1,0 +1,3 @@
+<view class="box">
+  <view class="button" bindtap="exit">{{text}}</view>
+</view>

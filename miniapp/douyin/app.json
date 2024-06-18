@@ -1,0 +1,13 @@
+{
+  "entryPagePath": "pages/home/index",
+  "pages":[
+    "pages/home/index",
+    "pages/detail/index"
+  ],
+  "window":{
+    "backgroundColor": "#000000",
+    "navigationStyle": "custom"
+  },
+  "networkTimeout": {},
+  "debug": true
+}

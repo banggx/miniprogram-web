@@ -1,0 +1,257 @@
+@import '@native/less/variables.less';
+
+.weixin-app__page-view {
+	position: absolute;
+  inset: 0;
+	background-color: #ededed;
+}
+
+.weixin-app-navigation {
+	padding-top: 88px * @proportion;
+	height: 88px * @proportion;
+	box-sizing: content-box;
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background-color: #ededed;
+
+	.weixin-app-navigation__content {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	.weixin-app-navigation__left-btn {
+		width: 20px * @proportion;
+		height: 88px * @proportion;
+		position: absolute;
+		left: 34px * @proportion;
+		top: 0;
+		background: url('@native/images/mini-arrow-left.png') no-repeat left center;
+		background-size: 20px * @proportion 35px * @proportion;
+		cursor: pointer;
+	}
+
+	.weixin-app-navigation__title {
+		text-align: center;
+		font-size: 34px * @proportion;
+		color: #333;
+	}
+
+	.weixin-app-navigation__right-btn {
+		width: 45px * @proportion;
+		height: 88px * @proportion;
+		position: absolute;
+		right: 33px * @proportion;
+		cursor: pointer;
+		top: 0;
+		background: url('@native/images/more.png') no-repeat center center;
+		background-size: 35px * @proportion auto;
+	}
+}
+
+.weixin-app-content {
+	padding-top: 176px * @proportion;
+	box-sizing: border-box;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.weixin-app-content__group {
+	margin-bottom: 16px * @proportion;
+	background-color: #fff;
+	border-bottom: 1px solid #e6e6e6;
+	border-top: 1px solid #e6e6e6;
+
+	.weixin-app-content__item {
+		padding-left: 112px * @proportion;
+		position: relative;
+		cursor: pointer;
+
+		&:last-child .weixin-app-content__name {
+			border: none;
+			position: relative;
+		}
+
+		.weixin-app-content__find-notify {
+			width: 64px * @proportion;
+			height: 64px * @proportion;
+			position: absolute;
+			right: 76px * @proportion;
+			top: 50%;
+			transform: translateY(-50%);
+			border-radius: 10px * @proportion;
+			background: url('@native/images/pony.jpg') no-repeat;
+			background-size: 100% 100%;
+
+			.weixin-app-content__find-notify-tips {
+				position: absolute;
+				width: 17px * @proportion;
+				height: 17px * @proportion;
+				background-color: #ff505a;
+				right: -8px * @proportion;
+				top: -8px * @proportion;
+				border-radius: 50%;
+			}
+		}
+
+		.weixin-app-content__arrow {
+			width: 14px * @proportion;
+			height: 25px * @proportion;
+			background: url('@native/images/icon-arrow.png') no-repeat;
+			background-size: 100% 100%;
+			position: absolute;
+			right: 32px * @proportion;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	.weixin-app-content__left-icon {
+		width: 48px * @proportion;
+		height: 48px * @proportion;
+		position: absolute;
+		left: 32px * @proportion;
+		top: 50%;
+		transform: translateY(-50%);
+
+		&.weixin-app-content__icon-find {
+			background: url('@native/images/icon-find.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-video {
+			background: url('@native/images/icon-video.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-qrcode {
+			background: url('@native/images/icon-qrcode.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-shake {
+			background: url('@native/images/icon-shake.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-look {
+			background: url('@native/images/icon-look.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-search {
+			background: url('@native/images/icon-search.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-mini {
+			background: url('@native/images/icon-mini.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-nearby {
+			background: url('@native/images/icon-nearby.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-order {
+			background: url('@native/images/icon-order.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+
+		&.weixin-app-content__icon-my-mini {
+			background: url('@native/images/icon-my-mini.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+	}
+
+	.weixin-app-content__name {
+		padding-top: 40px * @proportion;
+		padding-bottom: 40px * @proportion;
+		border-bottom: 1px solid #e6e6e6;
+		padding-right: 76px * @proportion;
+		position: relative;
+	}
+
+	.weixin-app-content__name-txt {
+		font-size: 34px * @proportion;
+		color: #333;
+	}
+}
+
+.weixin-app-footer-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-bottom: 68px * @proportion;
+	border-top: 1px solid #d5d5d5;
+	box-sizing: border-box;
+	background-color: #f6f6f6;
+	z-index: 10;
+	
+	.weixin-app-footer-btns {
+		display: flex;
+		flex-direction: row;
+		height: 113px * @proportion;
+	}
+
+	.weixin-app-footer-btn {
+		position: relative;
+		flex: 1;
+		list-style: none;
+		padding-top: 80px * @proportion;
+	}
+
+	.weixin-app-footer-btn__name {
+		text-align: center;
+		font-size: 20px * @proportion;
+		color: #333;
+	}
+
+	.weixin-app-footer-btn__icon {
+		width: 56px * @proportion;
+		height: 56px * @proportion;
+		position: absolute;
+		top: 18px * @proportion;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.weixin-app-footer-btn__find-update-notify {
+		position: absolute;
+		right: 0;
+		width: 16px * @proportion;
+		height: 16px * @proportion;
+		top: 0;
+		background-color: #ff505a;
+		border-radius: 50%;
+		z-index: 2;
+	}
+
+	.weixin-app-footer-btn__icon-wx {
+		background: url('@native/images/tab-wx.jpg') no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.weixin-app-footer-btn__icon-contact {
+		background: url('@native/images/tab-contact.jpg') no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.weixin-app-footer-btn__icon-find {
+		background: url('@native/images/tab-find.jpg') no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.weixin-app-footer-btn__icon-profile {
+		background: url('@native/images/tab-profile.jpg') no-repeat;
+		background-size: 100% 100%;
+	}
+}

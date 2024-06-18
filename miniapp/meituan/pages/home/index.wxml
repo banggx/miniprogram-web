@@ -1,0 +1,15 @@
+<view class="box">
+  <view class="home-title" bindtap="tapHandler(1, $event, true)">
+    <text>{{a.b.c[0].text}}</text>
+    <text>{{str}}</text>
+  </view>
+  <view class="sub-title">
+    <text wx:if="{{number === 1}}">一</text>
+    <text wx:elif="{{number === 2}}">二</text>
+    <text wx:else>未知数字</text>
+  </view>
+  <image class="user-photo-img" src="//miniapp.ai-matrix.vip/lib/user-zhu.jpg" />
+  <view class="home-go-detail" bindtap="goDetail">
+    <text>打开详情页</text>
+  </view>
+</view>

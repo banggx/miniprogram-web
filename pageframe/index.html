@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>pageFrame</title>
+	<script src="http://127.0.0.1:3600/lib/vue.js"></script>
+	<script src="http://127.0.0.1:3600/components/js/index.js"></script>
+	<script src="http://127.0.0.1:3200/ui_sdk/core.js"></script>
+
+	<link rel="stylesheet" href="http://127.0.0.1:3600/components/css/index.css" />
+  <script type="text/javascript">
+    // 添加amd 模块加载逻辑
+    (function() {
+      var defineCache = {};
+      var requireCache = {};
+      var loadingModules = {};
+      
+      // 模块定义
+      function define(id, factory) {
+        if (!defineCache[id]) {
+          var module = {
+            id,
+            factory,
+            dependencies: [],
+          };
+          defineCache[id] = module;
+        }
+      }
+
+      // 模块加载
+      function require(id) {
+        if (loadingModules[id]) {
+          return {};
+        }
+        if (!requireCache[id]) {
+          var mod = defineCache[id];
+          if (!mod) {
+            throw new Error('module is not defined' + id);
+          }
+          var module = {
+            exports: {}
+          };
+          loadingModules[id] = true;
+          var factoryArgs = [require, module.exports, module];
+          
+          mod.factory.apply(null, factoryArgs);
+          requireCache[id] = module.exports;
+          delete loadingModules[id];
+        }
+        return requireCache[id];
+      }
+
+      window.modDefine = define;
+      window.modRequire = require;
+    })();
+  </script>
+  <script type="text/javascript">
+    // 对rpx单位转化的rem进行支持
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const rootFontSize = viewportWidth / 750;
+    const rootTag = document.querySelector('html');
+    rootTag.style.fontSize = rootFontSize + 'px';
+  </script>
+	<style>
+		* {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      outline: 0;
+    }
+
+    blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul {
+      margin: 0;
+      padding: 0;
+      vertical-align: baseline;
+    }
+
+    img {
+      border: 0;
+      vertical-align: top;
+    }
+
+    em,i {
+      font-style: normal
+    }
+
+    ol,ul {
+      list-style: none
+    }
+
+    button,h1,h2,h3,h4,h5,h6,input,select {
+      font-size: 100%;
+      font-family: inherit;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    a,a:visited {
+      text-decoration: none;
+    }
+
+    body {
+      font-family: -apple-system, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+	</style>
+</head>
+<body>
+	<div id="root"></div>
+</body>
+</html>
